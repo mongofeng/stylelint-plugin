@@ -11,7 +11,7 @@ const messages = ruleMessages(ruleName, {
 
 function insertNode({postcssRoot, keyword, file}) {
     const hasProperty = postcssRoot.nodes.find(
-        ({ type, name, params }) => type === "atrule" && name === "import" && params.includes(keyword)
+        ({ type, name, params }) => type === "atrule" && name === "import" && keyword.some(k => params.includes(k))
     );
     // 有node的时候自动加上import
     if (!hasProperty && postcssRoot.first) {

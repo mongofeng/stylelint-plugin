@@ -20,7 +20,7 @@
     }, {
       "import": [
         {
-          "keyword": "colors.scss",
+          "keyword": ["colors.scss", "variable/_colors"],
           "file": "@import 'variable/_colors.scss';"
         }
       ]
