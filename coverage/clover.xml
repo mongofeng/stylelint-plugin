@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1624334384115" clover="3.2.0">
-  <project timestamp="1624334384115" name="All files">
-    <metrics statements="98" coveredstatements="97" conditionals="32" coveredconditionals="31" methods="6" coveredmethods="6" elements="136" coveredelements="134" complexity="0" loc="98" ncloc="98" packages="1" files="1" classes="1"/>
+<coverage generated="1624347600223" clover="3.2.0">
+  <project timestamp="1624347600223" name="All files">
+    <metrics statements="97" coveredstatements="96" conditionals="32" coveredconditionals="31" methods="6" coveredmethods="6" elements="135" coveredelements="133" complexity="0" loc="97" ncloc="97" packages="1" files="1" classes="1"/>
     <file name="declaration-property-value-to-variable.js" path="E:\code\⁮xiao100\stylint-demo\plugins\declaration-property-value-to-variable.js">
-      <metrics statements="98" coveredstatements="97" conditionals="32" coveredconditionals="31" methods="6" coveredmethods="6"/>
+      <metrics statements="97" coveredstatements="96" conditionals="32" coveredconditionals="31" methods="6" coveredmethods="6"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
@@ -76,13 +76,13 @@
       <line num="70" count="9" type="cond" truecount="1" falsecount="0"/>
       <line num="71" count="4" type="stmt"/>
       <line num="72" count="4" type="stmt"/>
-      <line num="73" count="4" type="stmt"/>
-      <line num="74" count="4" type="cond" truecount="0" falsecount="1"/>
-      <line num="75" count="0" type="stmt"/>
+      <line num="73" count="4" type="cond" truecount="0" falsecount="1"/>
+      <line num="74" count="0" type="stmt"/>
+      <line num="75" count="4" type="stmt"/>
       <line num="76" count="4" type="stmt"/>
       <line num="77" count="4" type="stmt"/>
-      <line num="78" count="4" type="stmt"/>
-      <line num="79" count="9" type="cond" truecount="1" falsecount="0"/>
+      <line num="78" count="9" type="cond" truecount="1" falsecount="0"/>
+      <line num="79" count="2" type="stmt"/>
       <line num="80" count="2" type="stmt"/>
       <line num="81" count="2" type="stmt"/>
       <line num="82" count="2" type="stmt"/>
@@ -90,18 +90,17 @@
       <line num="84" count="2" type="stmt"/>
       <line num="85" count="2" type="stmt"/>
       <line num="86" count="2" type="stmt"/>
-      <line num="87" count="2" type="stmt"/>
-      <line num="88" count="9" type="stmt"/>
+      <line num="87" count="9" type="stmt"/>
+      <line num="88" count="3" type="stmt"/>
       <line num="89" count="3" type="stmt"/>
-      <line num="90" count="3" type="stmt"/>
-      <line num="91" count="5" type="cond" truecount="3" falsecount="0"/>
-      <line num="92" count="2" type="cond" truecount="1" falsecount="0"/>
-      <line num="93" count="2" type="stmt"/>
+      <line num="90" count="5" type="cond" truecount="3" falsecount="0"/>
+      <line num="91" count="2" type="cond" truecount="1" falsecount="0"/>
+      <line num="92" count="2" type="stmt"/>
+      <line num="93" count="5" type="stmt"/>
       <line num="94" count="5" type="stmt"/>
-      <line num="95" count="5" type="stmt"/>
+      <line num="95" count="1" type="stmt"/>
       <line num="96" count="1" type="stmt"/>
       <line num="97" count="1" type="stmt"/>
-      <line num="98" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

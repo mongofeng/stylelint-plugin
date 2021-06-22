@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">98.98% </span>
+                <span class="strong">98.97% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>97/98</span>
+                <span class='fraction'>96/97</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">98.98% </span>
+                <span class="strong">98.97% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>97/98</span>
+                <span class='fraction'>96/97</span>
             </div>
         
             
@@ -153,8 +153,7 @@
 <a name='L94'></a><a href='#L94'>94</a>
 <a name='L95'></a><a href='#L95'>95</a>
 <a name='L96'></a><a href='#L96'>96</a>
-<a name='L97'></a><a href='#L97'>97</a>
-<a name='L98'></a><a href='#L98'>98</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L97'></a><a href='#L97'>97</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -227,7 +226,6 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -251,7 +249,7 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">//no-blue-color.js
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
 &nbsp;
 const stylelint = require('stylelint');
 &nbsp;
@@ -283,8 +281,8 @@ module.exports = stylelint.createPlugin(ruleName, function getPlugin(primaryOpti
                     if (typeof option !== 'object') {
                         return false
                     }
-                    const keys = Object.keys(option)
-                    return keys.length &amp;&amp; keys.every(k =&gt; {
+                    const primaryOptionKeys = Object.keys(option)
+                    return primaryOptionKeys.length &amp;&amp; primaryOptionKeys.every(k =&gt; {
                         return typeof option[k] === 'object'
                     });
                 }, // 默认通过认证
@@ -300,7 +298,7 @@ module.exports = stylelint.createPlugin(ruleName, function getPlugin(primaryOpti
             }
         );
 &nbsp;
-        if (!validOptions) { //If the options are invalid, don't lint
+        if (!validOptions) { //如果选项无效，不是校验
             return;
         }
         // --fix选项
@@ -314,28 +312,27 @@ module.exports = stylelint.createPlugin(ruleName, function getPlugin(primaryOpti
         }
 &nbsp;
 &nbsp;
-        postcssRoot.walkDecls(decl =&gt; { //Iterate CSS declarations
+        postcssRoot.walkDecls(decl =&gt; { 
             const hasProps = keys.includes(decl.prop) &amp;&amp; Object.keys(primaryOption[decl.prop]).includes(decl.value);
             if (!hasProps) {
-                return; //Nothing to do with this node - continue
+                return; //找不到替换的node - continue
             }
             const targetVal = primaryOption[decl.prop][decl.value]
-            if (isAutoFixing) { //We are in “fix” mode
+            if (isAutoFixing) { // 修复模式下
                 const newValue = decl.value.replace(decl.value, targetVal);
                 insertNodeFlag = true
-                //Apply the fix. It's not pretty, but that's the way to do it
                 if (decl.raws.value) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >                    decl.raws.value.raw = newValue;</span>
                 } else {
                     decl.value = newValue;
                 }
-            } else { //We are in “report only” mode
+            } else { // 不修复去报告
                 report({
                     ruleName,
                     result: postcssResult,
-                    message: messages.expected(`${decl.prop}: ${decl.value}`, `${decl.prop}: ${targetVal}`), // Build the reported message
-                    node: decl, // Specify the reported node
-                    word: 'blue', // Which exact word caused the error? This positions the error properly
+                    message: messages.expected(`${decl.prop}: ${decl.value}`, `${decl.prop}: ${targetVal}`), // 生成报告的消息
+                    node: decl, // 指定报告的节点
+                    word: decl.value, // 哪个词导致了错误？这将正确定位错误
                 });
             }
         });
@@ -355,7 +352,7 @@ module.exports.messages = messages;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jun 22 2021 11:59:44 GMT+0800 (中国标准时间)
+                at Tue Jun 22 2021 15:40:00 GMT+0800 (中国标准时间)
             </div>
         </div>
         <script src="prettify.js"></script>

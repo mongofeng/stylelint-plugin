@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "lint": "stylelint --fix \"**/*.{vue,less,postcss,css,scss}\" ",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "husky": "^6.0.0",
-    "stylelint": "^13.13.1"
+    "stylelint": "^13.13.1",
+    "husky": "^6.0.0"
   },
   "dependencies": {
     "jest": "^27.0.4",

@@ -1,9 +1,10 @@
+@import 'variable/_colors.scss';
 
 a {
-  color: green;
+  color: $abc;
   background: #fff;
 }
 
 div {
-  color: #fff;
+  color: $white;
 }
