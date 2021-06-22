@@ -12,11 +12,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "stylelint": "^13.13.1",
-    "husky": "^6.0.0"
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "stylelint": "^13.13.1"
   },
   "dependencies": {
     "jest": "^27.0.4",
     "jest-preset-stylelint": "^4.1.1"
+  },
+  "lint-staged": {
+    "*.css": "stylelint --fix"
   }
 }
