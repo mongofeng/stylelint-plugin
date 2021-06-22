@@ -52,7 +52,6 @@ module.exports = stylelint.createPlugin(ruleName, function getPlugin(primaryOpti
         }
 
         const isAutoFixing = Boolean(context.fix) && !secondaryOptionObject.disableFix;
-        console.log(isAutoFixing)
         let insertNodeFlag = false
         const keys = Object.keys(primaryOption)
 
