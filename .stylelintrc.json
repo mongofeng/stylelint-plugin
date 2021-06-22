@@ -6,7 +6,16 @@
     "ss-style-plugin/declaration-property-value-to-variable": [{ 
       "color": {
         "green": "$abc",
-        "#fff": "$white"
+        "#fff": "$white",
+        "#262626": "$text-primary",
+          "#aaa": "$text-weak",
+          "#AAAAAA": "$text-weak",
+          "#999": "$text-minor",
+          "#999999": "$text-minor",
+          "#ccc": "$text-disabled",
+          "#CCCCCC": "$text-disabled",
+          "#666": "$text-major",
+          "#666666": "$text-major"
       }
     }, {
       "import": [
