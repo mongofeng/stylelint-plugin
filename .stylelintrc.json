@@ -14,8 +14,7 @@
           "keyword": "colors.scss",
           "file": "@import 'variable/_colors.scss';"
         }
-      ],
-      "disableFix": true
+      ]
     }]
   }
 }

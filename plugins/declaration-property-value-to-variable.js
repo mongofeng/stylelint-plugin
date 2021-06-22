@@ -1,4 +1,4 @@
-//no-blue-color.js
+
 
 const stylelint = require('stylelint');
 
@@ -30,8 +30,8 @@ module.exports = stylelint.createPlugin(ruleName, function getPlugin(primaryOpti
                     if (typeof option !== 'object') {
                         return false
                     }
-                    const keys = Object.keys(option)
-                    return keys.length && keys.every(k => {
+                    const primaryOptionKeys = Object.keys(option)
+                    return primaryOptionKeys.length && primaryOptionKeys.every(k => {
                         return typeof option[k] === 'object'
                     });
                 }, // 默认通过认证
@@ -47,7 +47,7 @@ module.exports = stylelint.createPlugin(ruleName, function getPlugin(primaryOpti
             }
         );
 
-        if (!validOptions) { //If the options are invalid, don't lint
+        if (!validOptions) { //如果选项无效，不是校验
             return;
         }
         // --fix选项
@@ -61,28 +61,27 @@ module.exports = stylelint.createPlugin(ruleName, function getPlugin(primaryOpti
         }
 
 
-        postcssRoot.walkDecls(decl => { //Iterate CSS declarations
+        postcssRoot.walkDecls(decl => { 
             const hasProps = keys.includes(decl.prop) && Object.keys(primaryOption[decl.prop]).includes(decl.value);
             if (!hasProps) {
-                return; //Nothing to do with this node - continue
+                return; //找不到替换的node - continue
             }
             const targetVal = primaryOption[decl.prop][decl.value]
-            if (isAutoFixing) { //We are in “fix” mode
+            if (isAutoFixing) { // 修复模式下
                 const newValue = decl.value.replace(decl.value, targetVal);
                 insertNodeFlag = true
-                //Apply the fix. It's not pretty, but that's the way to do it
                 if (decl.raws.value) {
                     decl.raws.value.raw = newValue;
                 } else {
                     decl.value = newValue;
                 }
-            } else { //We are in “report only” mode
+            } else { // 不修复去报告
                 report({
                     ruleName,
                     result: postcssResult,
-                    message: messages.expected(`${decl.prop}: ${decl.value}`, `${decl.prop}: ${targetVal}`), // Build the reported message
-                    node: decl, // Specify the reported node
-                    word: 'blue', // Which exact word caused the error? This positions the error properly
+                    message: messages.expected(`${decl.prop}: ${decl.value}`, `${decl.prop}: ${targetVal}`), // 生成报告的消息
+                    node: decl, // 指定报告的节点
+                    word: decl.value, // 哪个词导致了错误？这将正确定位错误
                 });
             }
         });
