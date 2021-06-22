@@ -1,0 +1,21 @@
+{
+  "plugins": [
+      "./plugins/declaration-property-value-to-variable.js"
+  ],
+  "rules": {
+    "ss-style-plugin/declaration-property-value-to-variable": [{ 
+      "color": {
+        "green": "$abc",
+        "#fff": "$white"
+      }
+    }, {
+      "import": [
+        {
+          "keyword": "colors.scss",
+          "file": "@import 'variable/_colors.scss';"
+        }
+      ],
+      "disableFix": true
+    }]
+  }
+}
