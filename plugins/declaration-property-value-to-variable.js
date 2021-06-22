@@ -50,7 +50,7 @@ module.exports = stylelint.createPlugin(ruleName, function getPlugin(primaryOpti
         if (!validOptions) { //If the options are invalid, don't lint
             return;
         }
-
+        // --fix选项
         const isAutoFixing = Boolean(context.fix) && !secondaryOptionObject.disableFix;
         let insertNodeFlag = false
         const keys = Object.keys(primaryOption)
