@@ -23,7 +23,7 @@
 为了解决这个不便，我们编写了自定义的stylelint规则。它建议正确的变量名称，甚至自动修复错误。多么方便！
 
 
-![企业微信截图_20210622141958.png](https://cdn.nlark.com/yuque/0/2021/png/2940373/1624342943234-27b272c1-5cb6-4c2d-8b03-20ca55810ebc.png#clientId=u555eb798-f8c3-4&from=ui&id=u1e18b648&margin=%5Bobject%20Object%5D&name=%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210622141958.png&originHeight=260&originWidth=935&originalType=binary&ratio=1&size=15778&status=done&style=none&taskId=udcb956ed-f343-4d5c-8985-2032982b386)
+![企业微信截图_20210622141958.png](./doc/img/warn.png)
 
 
 我们的自定义规则在起作用
@@ -219,7 +219,7 @@ module.exports = stylelint.createPlugin(ruleName, function getPlugin(primaryOpti
 module.exports.ruleName = ruleName;
 module.exports.messages = messages;
 ```
-​
+
 
 # 自定义规则集成
 
@@ -248,7 +248,7 @@ module.exports.messages = messages;
   }
 }
 ```
-向package.json中加入scripts
+向`package.json`中加入`scripts`
 ```json
 {
   "scripts": {
@@ -256,9 +256,9 @@ module.exports.messages = messages;
   }
 }
 ```
-![企业微信截图_20210622150347.png](https://cdn.nlark.com/yuque/0/2021/png/2940373/1624345445741-d86aaf96-82ac-4e48-918d-38f46c1341c4.png#clientId=u66d06f82-8517-4&from=ui&id=u1ae55d4d&margin=%5Bobject%20Object%5D&name=%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210622150347.png&originHeight=339&originWidth=1068&originalType=binary&ratio=1&size=19769&status=done&style=none&taskId=ub60f229f-dcfc-410d-a230-46295de5a04)
-运行npm run lint之后，自动导入变量文件，修复变量值
-![企业微信截图_20210622150050.png](https://cdn.nlark.com/yuque/0/2021/png/2940373/1624345499578-f5c5e6bc-ea7a-4355-8d01-bf2cbe69cd50.png#clientId=u66d06f82-8517-4&from=ui&id=u1bdb0019&margin=%5Bobject%20Object%5D&name=%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210622150050.png&originHeight=288&originWidth=540&originalType=binary&ratio=1&size=5646&status=done&style=none&taskId=u18cb5411-ffd3-4ce0-99ec-a0f0cf7d53e)
+![企业微信截图_20210622150347.png](doc/img/origin.png)
+运行`npm run lint`之后，自动导入变量文件，修复变量值
+![企业微信截图_20210622150050.png](doc/img/fixed.png)
 Stylelint 是一个非常有用的 linting 工具。在协作处理常见的 SCSS 和 CSS 文件时，它具有许多优势。它带有各种各样的现有规则。然而，它们不能总是满足您的所有需求。在某些时候，您将需要一个尚不存在的 linting 规则。它可能是项目的结构、您团队的约定或其他任何东西。在这些情况下，自定义规则将非常有用。
 希望在阅读这篇文章后，您将能够快速创建和集成自己的 stylelint 规则。这样，您将在尊重项目要求的同时保持更高水平的代码质量。
 ​
