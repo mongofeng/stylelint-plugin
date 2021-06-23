@@ -1,0 +1,45 @@
+.ant-popover {
+  max-width: 256px;
+
+  .ant-popover-inner-content {
+    padding: 17px 20px 20px;
+
+    .ant-popover-message {
+      padding: 0 0 15px;
+      font-size: 12px;
+      line-height: 18px;
+
+      .anticon {
+        display: none;
+      }
+
+      .ant-popover-message-title {
+        padding-left: 0;
+      }
+    }
+
+    .ant-popover-buttons {
+      margin-bottom: 0;
+      line-height: 12px;
+
+      .ant-btn {
+        margin: 0;
+        padding: 0;
+        color: #666;
+        text-decoration: none;
+        text-shadow: none;
+        background-color: #fff;
+        border: none;
+        box-shadow: none;
+      }
+
+      .ant-btn-default {
+        margin-right: 20px;
+      }
+
+      .ant-btn-primary {
+        color: #02a438;
+      }
+    }
+  }
+}

@@ -4,8 +4,8 @@ module.exports = {
       'stylelint-config-rational-order', // 使用rational顺序
     ],
     plugins: [
+      "./plugins/declaration-property-value-to-variable.js",
       'stylelint-declaration-block-no-ignored-properties',
-      "./plugins/declaration-property-value-to-variable.js"
     ], // 不允许由于同一规则中的另一个属性值而忽略的属性值。
     rules: {
       "ss-style-plugin/declaration-property-value-to-variable": [{ 
