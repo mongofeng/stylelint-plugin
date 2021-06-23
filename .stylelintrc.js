@@ -1,5 +1,6 @@
 module.exports = {
     extends: [
+      // 'stylelint-config-recommended',
       'stylelint-config-standard', // 格式化居多
       'stylelint-config-rational-order', // 使用rational顺序
     ],
@@ -8,26 +9,6 @@ module.exports = {
       'stylelint-declaration-block-no-ignored-properties',
     ], // 不允许由于同一规则中的另一个属性值而忽略的属性值。
     rules: {
-      "ss-style-plugin/declaration-property-value-to-variable": [{ 
-        "color": {
-          "#262626": "$text-primary",
-          "#aaa": "$text-weak",
-          "#AAAAAA": "$text-weak",
-          "#999": "$text-minor",
-          "#999999": "$text-minor",
-          "#ccc": "$text-disabled",
-          "#CCCCCC": "$text-disabled",
-          "#666": "$text-major",
-          "#666666": "$text-major",
-        }
-      }, {
-        "import": [
-          {
-            "keyword": ["colors.scss", "variable/_colors", "assets/scss/variable/colors"],
-            "file": "@import 'variable/_colors.scss';"
-          }
-        ]
-      }],
       "plugin/declaration-block-no-ignored-properties": true, // 开启不允许由于同一规则中的另一个属性值而忽略的属性值。
       'named-grid-areas-no-invalid': null, // 修复stylelint莫名的问题https://github.com/stylelint/stylelint-config-standard/issues/174
       'declaration-block-no-duplicate-custom-properties': null,
@@ -66,7 +47,29 @@ module.exports = {
 
       // 自定义规则
       'selector-class-pattern': '^[^A-Z]+', // 类选择器模式禁止驼峰，小写横杠
+      "ss-style-plugin/declaration-property-value-to-variable": [{ 
+        "color": {
+          "#262626": "$text-primary",
+          "#aaa": "$text-weak",
+          "#AAAAAA": "$text-weak",
+          "#999": "$text-minor",
+          "#999999": "$text-minor",
+          "#ccc": "$text-disabled",
+          "#CCCCCC": "$text-disabled",
+          "#666": "$text-major",
+          "#666666": "$text-major",
+        }
+      }, {
+        "import": [
+          {
+            "keyword": ["colors.scss", "variable/_colors", "assets/scss/variable/colors"],
+            "file": "@import 'variable/_colors.scss';"
+          }
+        ]
+      }],
 
+      // 排除问题
+    "at-rule-semicolon-newline-after": null,  // 问题在这里会产生undefined
     },
     ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts'],
 };
