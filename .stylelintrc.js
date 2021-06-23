@@ -1,6 +1,5 @@
 module.exports = {
     extends: [
-      // 'stylelint-config-recommended',
       'stylelint-config-standard', // 格式化居多
       'stylelint-config-rational-order', // 使用rational顺序
     ],

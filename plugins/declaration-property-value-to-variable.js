@@ -14,7 +14,7 @@ function insertNode({postcssRoot, keyword, file}) {
         ({ type, name, params }) => type === "atrule" && name === "import" && keyword.some(k => params.includes(k))
     );
     // 有node的时候自动加上import
-    if (!hasProperty ) {
+    if (!hasProperty) {
         postcssRoot.prepend(file)
     }
 }

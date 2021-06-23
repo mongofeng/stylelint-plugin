@@ -263,6 +263,26 @@ Stylelint 是一个非常有用的 linting 工具。在协作处理常见的 SCS
 希望在阅读这篇文章后，您将能够快速创建和集成自己的 stylelint 规则。这样，您将在尊重项目要求的同时保持更高水平的代码质量。
 ​
 
+# 注意
+- 用了`stylelint-config-standard`之后自动import参数的时候会偶然出现`undefined`的奇异问题
+
+  ![](doc/img/normal.png)
+运行`npm run lint`之后
+  ![](doc/img/error.png)
+经排查是`stylelint-config-standard`的`at-rule-semicolon-newline-after`的格式化问题需要禁用
+```js
+module.exports = {
+    extends: [
+      'stylelint-config-standard', 
+    ],
+    rules: {
+    "at-rule-semicolon-newline-after": null,  // 问题在这里会产生undefined
+    },
+    ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts'],
+};
+
+```
+
 如果你觉得文章不错，点个赞给个start，[github地址](https://github.com/mongofeng/stylelint-plugin)
 
 
