@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "stylelint --fix \"src/*.{vue,less,postcss,css,scss}\" ",
+    "lint": "stylelint --fix \"src/asset/*.{vue,less,postcss,css,scss}\" ",
     "test": "jest",
     "prepare": "husky install"
   },
