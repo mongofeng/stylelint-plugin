@@ -1,5 +1,7 @@
+@import 'variable/_colors.scss';
+
 .ant-radio-wrapper {
-  color: #262626;
+  color: $text-primary;
   font-size: 14px;
 
   .ant-radio {
