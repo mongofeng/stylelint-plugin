@@ -1,26 +1,7 @@
 {
-  "name": "stylint-demo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "lint": "stylelint --fix \"**/*.{vue,less,postcss,css,scss}\" ",
-    "test": "jest",
-    "prepare": "husky install"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "name": "root",
+  "private": true,
   "devDependencies": {
-    "husky": "^6.0.0",
-    "lint-staged": "^11.0.0",
-    "stylelint": "^13.13.1"
-  },
-  "dependencies": {
-    "jest": "^27.0.4",
-    "jest-preset-stylelint": "^4.1.1"
-  },
-  "lint-staged": {
-    "*.scss": "stylelint --fix"
+    "lerna": "^4.0.0"
   }
 }

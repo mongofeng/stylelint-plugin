@@ -1,0 +1,28 @@
+{
+  "plugins": [
+    "./lib/index.js"
+  ],
+  "rules": {
+    "ss-style-plugin/declaration-property-value-to-variable": [
+      {
+        "/color/": {
+          "/#bbb/i": "$abc"
+        },
+        "/border/": {
+          "/#ccc/i": "$b"
+        }
+      },
+      {
+        "import": [
+          {
+            "keyword": [
+              "colors.scss",
+              "variable/_colors"
+            ],
+            "file": "@import 'variable/_colors.scss';"
+          }
+        ]
+      }
+    ]
+  }
+}

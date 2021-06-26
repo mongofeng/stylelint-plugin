@@ -1,14 +1,12 @@
-
 @import 'variable/_colors.scss';
+
 a {
   color: $abc;
-  background: #fff;
+  background:#fff;
+  background-color: #fff;
+  border: 1px solid $b;
 }
 
 div {
-  color: $white;
-}
-
-b {
   color: $abc;
 }

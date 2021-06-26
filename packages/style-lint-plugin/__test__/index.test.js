@@ -1,14 +1,14 @@
 // index.test.js
 const { lint } = require("stylelint");
 const path = require('path')
-const {ruleName} = require('./declaration-property-value-to-variable.js')
+const {ruleName} = require('../lib/index.js')
 
 
 
 
 it("检查自动修复的问题", async () => {
   const config = {
-    plugins: ["./plugins/declaration-property-value-to-variable.js"],
+    plugins: ["./lib/index.js"],
     rules: {
       [ruleName]:  [{ 
         "color": {
@@ -57,7 +57,7 @@ it("检查自动修复的问题", async () => {
 
 test('检查插件的选项', async () => {
   const config = {
-    plugins: ["./plugins/declaration-property-value-to-variable.js"],
+    plugins: ["./lib/index.js"],
     rules: {
       [ruleName]: [true, false]
     }

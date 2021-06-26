@@ -3,13 +3,15 @@
 const stylelint = require('stylelint');
 
 const { report, ruleMessages, validateOptions } = stylelint.utils;
+const matchesStringOrRegExp = require('./utils/matchesStringOrRegExp')
+const string2RegExp = require('./utils/string2RegExp')
 const ruleName = 'ss-style-plugin/declaration-property-value-to-variable';
 const messages = ruleMessages(ruleName, {
     expected: (unfixed, fixed) => `Expected "${unfixed}" to be "${fixed}"`,
 });
 
 
-function insertNode({postcssRoot, keyword, file}) {
+function insertNode({ postcssRoot, keyword, file }) {
     const hasProperty = postcssRoot.nodes.find(
         ({ type, name, params }) => type === "atrule" && name === "import" && keyword.some(k => params.includes(k))
     );
@@ -43,7 +45,7 @@ module.exports = stylelint.createPlugin(ruleName, function getPlugin(primaryOpti
                         return false
                     }
                     return option.import;
-                }, 
+                },
             }
         );
 
@@ -61,14 +63,27 @@ module.exports = stylelint.createPlugin(ruleName, function getPlugin(primaryOpti
         }
 
 
-        postcssRoot.walkDecls(decl => { 
-            const hasProps = keys.includes(decl.prop) && Object.keys(primaryOption[decl.prop]).includes(decl.value);
+        postcssRoot.walkDecls(decl => {
+
+            const prop = decl.prop;
+			const value = decl.value;
+
+            // 判断是否包含
+            const hasProps = matchesStringOrRegExp(prop, keys)
             if (!hasProps) {
-                return; //找不到替换的node - continue
+                return
             }
-            const targetVal = primaryOption[decl.prop][decl.value]
+            const { pattern } = hasProps
+
+            const hasValue = matchesStringOrRegExp(value, Object.keys(primaryOption[pattern]) )
+
+            if (!hasValue) {
+                return
+            }
+
+            const targetVal = primaryOption[pattern][hasValue.pattern]
+            const newValue = value.replace(string2RegExp(hasValue.pattern), targetVal);
             if (isAutoFixing) { // 修复模式下
-                const newValue = decl.value.replace(decl.value, targetVal);
                 insertNodeFlag = true
                 if (decl.raws.value) {
                     decl.raws.value.raw = newValue;
@@ -79,7 +94,7 @@ module.exports = stylelint.createPlugin(ruleName, function getPlugin(primaryOpti
                 report({
                     ruleName,
                     result: postcssResult,
-                    message: messages.expected(`${decl.prop}: ${decl.value}`, `${decl.prop}: ${targetVal}`), // 生成报告的消息
+                    message: messages.expected(`${prop}: ${value}`, `${prop}: ${newValue}`), // 生成报告的消息
                     node: decl, // 指定报告的节点
                     word: decl.value, // 哪个词导致了错误？这将正确定位错误
                 });
@@ -88,7 +103,7 @@ module.exports = stylelint.createPlugin(ruleName, function getPlugin(primaryOpti
 
         // 自动修复的时候插入css
         if (insertNodeFlag && secondaryOptionObject.import && secondaryOptionObject.import.length) {
-            secondaryOptionObject.import.forEach(({keyword, file}) => insertNode({postcssRoot, keyword, file}))
+            secondaryOptionObject.import.forEach(({ keyword, file }) => insertNode({ postcssRoot, keyword, file }))
         }
     };
 });
