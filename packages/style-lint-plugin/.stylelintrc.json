@@ -3,6 +3,7 @@
     "./lib/index.js"
   ],
   "rules": {
+    "color-hex-case": "upper",
     "ss-style-plugin/declaration-property-value-to-variable": [
       {
         "/color/": {
@@ -13,6 +14,7 @@
         }
       },
       {
+        "severity": "warning", 
         "import": [
           {
             "keyword": [
