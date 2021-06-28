@@ -34,11 +34,8 @@ const ssRule = {
     'time-min-milliseconds': null, //指定时间值的最小毫秒数。
     'declaration-block-no-redundant-longhand-properties': null,  //：禁止将可合并为一个速记属性的速记属性。（需要手动修复）
     'declaration-no-important': null, //：禁止!important在声明中使用。
-
-
     // 自定义规则
     'selector-class-pattern': '^[^A-Z]+', // 类选择器模式禁止驼峰，小写横杠
-
 }
 
 module.exports = {
