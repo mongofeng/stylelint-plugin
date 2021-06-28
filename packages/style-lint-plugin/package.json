@@ -1,7 +1,7 @@
 {
   "name": "style-lint-plugin",
   "version": "1.0.0",
-  "description": "",
+  "description": "style-lint plugin to change variable",
   "main": "lib/index.js",
   "scripts": {
     "lint": "stylelint src/**/*.{css,scss,sass}",
@@ -15,7 +15,7 @@
     "jest": "^27.0.4",
     "jest-preset-stylelint": "^4.1.1"
   },
-  "keywords": [],
+  "keywords": ["style-lint", "plugin"],
   "author": "",
   "license": "ISC"
 }
