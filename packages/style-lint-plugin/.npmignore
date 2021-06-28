@@ -2,6 +2,10 @@ src
 coverage
 .stylelintrc.json
 package-lock.json
+ __test__
+jest.config.js
+jest.setup.js
+index.js
 
 .DS_Store
 node_modules
