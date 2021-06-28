@@ -9,11 +9,9 @@
     "test": "jest"
   },
   "devDependencies": {
-    "stylelint": "^13.13.1"
-  },
-  "dependencies": {
     "jest": "^27.0.4",
-    "jest-preset-stylelint": "^4.1.1"
+    "jest-preset-stylelint": "^4.1.1",
+    "stylelint": "^13.13.1"
   },
   "keywords": [
     "style-lint",
