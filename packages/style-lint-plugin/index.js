@@ -2,7 +2,7 @@ const { lint } = require("stylelint");
 const path = require('path')
 const {ruleName} = require('./lib/index.js')
 const config = {
-  plugins: ["./lib/index.js"],
+  extends: ["./lib/index.js"],
   rules: {
     [ruleName]:  [{ 
       "/color/": {
