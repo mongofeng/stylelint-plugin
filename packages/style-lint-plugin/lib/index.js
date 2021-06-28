@@ -2,12 +2,12 @@ const path = require('path');
 
 module.exports = {
     plugins: [
-        path.join(__dirname, './plugin/font-width-line-height.js'),
+        path.join(__dirname, './plugin/font-with-line-height.js'),
         path.join(__dirname, './plugin/declaration-property-value-to-variable.js')
     ],
     rules: {
         "at-rule-semicolon-newline-after": null,  // 自动import问题在这里会产生undefined
-        "ss-style-plugin/font-width-line-height": [
+        "ss-style-plugin/font-with-line-height": [
             {
                 "font-size": {
                     "withProperties": "line-height",

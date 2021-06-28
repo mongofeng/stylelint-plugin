@@ -1,5 +1,5 @@
 {
-  "name": "style-lint-plugin",
+  "name": "ss-style-plugin",
   "version": "1.0.0",
   "description": "style-lint plugin to change variable",
   "main": "lib/index.js",

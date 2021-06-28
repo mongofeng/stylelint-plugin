@@ -5,7 +5,7 @@ const report = stylelint.utils.report;
 const ruleMessages = stylelint.utils.ruleMessages;
 const validateOptions = stylelint.utils.validateOptions;
 
-const ruleName = 'ss-style-plugin/font-width-line-height';
+const ruleName = 'ss-style-plugin/font-with-line-height';
 const messages = ruleMessages(ruleName, {
   rejected: (ignore, cause) => `Expected "${ignore}" to "${cause}"`
 });
