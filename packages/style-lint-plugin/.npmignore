@@ -1,5 +1,4 @@
 src
-doc
 coverage
 .stylelintrc.json
 package-lock.json
