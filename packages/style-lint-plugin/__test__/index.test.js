@@ -8,7 +8,7 @@ const {ruleName} = require('../lib/index.js')
 
 it("检查自动修复的问题", async () => {
   const config = {
-    plugins: ["./lib/index.js"],
+    extends: ["./lib/index.js"],
     rules: {
       [ruleName]:  [{ 
         "color": {
@@ -28,7 +28,7 @@ it("检查自动修复的问题", async () => {
   };
 
   const res = await lint({
-    files: 'src/autofix.scss', 
+    files: 'src/b.scss', 
     config,
     fix: true,
     configBasedir: path.resolve(__dirname, '../'),
@@ -45,7 +45,7 @@ it("检查自动修复的问题", async () => {
   const {
     errored: importError,
   } = await lint({
-    files: 'src/autofix-with-import.scss', 
+    files: 'src/b.scss', 
     config,
     fix: true,
     configBasedir: path.resolve(__dirname, '../'),
@@ -57,7 +57,7 @@ it("检查自动修复的问题", async () => {
 
 test('检查插件的选项', async () => {
   const config = {
-    plugins: ["./lib/index.js"],
+    extends: ["./lib/index.js"],
     rules: {
       [ruleName]: [true, false]
     }
