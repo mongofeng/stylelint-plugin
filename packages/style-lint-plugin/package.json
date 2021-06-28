@@ -1,6 +1,6 @@
 {
   "name": "ss-style-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.0",
   "description": "style-lint plugin to change variable",
   "main": "lib/index.js",
   "scripts": {
@@ -15,7 +15,10 @@
     "jest": "^27.0.4",
     "jest-preset-stylelint": "^4.1.1"
   },
-  "keywords": ["style-lint", "plugin"],
+  "keywords": [
+    "style-lint",
+    "plugin"
+  ],
   "author": "",
   "license": "ISC"
 }
