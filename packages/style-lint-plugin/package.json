@@ -11,12 +11,17 @@
   "devDependencies": {
     "jest": "^27.0.4",
     "jest-preset-stylelint": "^4.1.1",
-    "stylelint": "^13.13.1"
+    "stylelint": "^13.13.0"
+  },
+  "peerDependencies": {
+    "stylelint": "^13.13.0"
   },
   "keywords": [
-    "style-lint",
+    "stylelint",
+    "stylelint-config",
+    "recommended",
     "plugin"
   ],
-  "author": "",
+  "author": "yangpu",
   "license": "ISC"
 }
